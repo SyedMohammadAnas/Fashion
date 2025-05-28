@@ -39,7 +39,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} ${bebasNeue.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Portal root for header dropdown overlay */}
+        <div id="dropdown-root"></div>
+      </body>
     </html>
   );
 }
