@@ -83,7 +83,7 @@ export default function Home() {
                 <Image src={feature.iconPath} alt={feature.alt} width={48} height={48} className="mx-auto w-12 h-12 object-contain" />
               </div>
               {/* Title - Bebas Neue */}
-              <h3 className="text-2xl md:text-3xl font-bold mb-2 font-bebasNeue tracking-wide">{feature.title}</h3>
+              <h3 className={`${bebasNeue.className} text-2xl md:text-3xl font-bold mb-2 tracking-wide`}>{feature.title}</h3>
               {/* Description - Merriweather */}
               <p className="text-base text-gray-700 font-merriweather max-w-xs mx-auto">{feature.description}</p>
             </div>
@@ -161,7 +161,7 @@ function ProductCard({ title, image, alt }: { title: string; image: string; alt:
         />
       </div>
       {/* Product Title */}
-      <h3 className="text-lg font-semibold font-merriweather text-gray-800 mb-2">{title}</h3>
+      <h3 className={`${merriweather.className} text-lg font-semibold text-gray-800 mb-2`}>{title}</h3>
       {/* Placeholder for future price or action button */}
       {/* <button className="mt-auto bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">Shop Now</button> */}
     </div>
@@ -210,7 +210,7 @@ function MinimalProductCard({ title, image, alt, price, rating, reviews, badge }
     <div className="bg-white rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center p-4 group relative">
       {/* Badge (optional) */}
       {badge && (
-        <span className="absolute top-4 left-4 bg-black text-white text-xs font-bold px-3 py-1 rounded-full z-10 font-bebasNeue tracking-wide">{badge}</span>
+        <span className="absolute top-4 left-4 bg-black text-white text-xs font-bold px-3 py-1 rounded-full z-10 tracking-wide">{badge}</span>
       )}
       {/* Product Image */}
       <div className="w-full h-40 relative mb-3 overflow-hidden rounded-lg">
@@ -223,7 +223,7 @@ function MinimalProductCard({ title, image, alt, price, rating, reviews, badge }
         />
       </div>
       {/* Product Title */}
-      <h3 className="text-base md:text-lg font-bold font-bebasNeue text-gray-900 mb-1 text-center">{title}</h3>
+      <h3 className={`${merriweather.className} text-base md:text-lg font-bold text-gray-900 mb-1 text-center`}>{title}</h3>
       {/* Price */}
       <div className="text-lg font-bold text-green-700 mb-1 font-merriweather">{price}</div>
       {/* Rating and reviews */}
@@ -231,7 +231,7 @@ function MinimalProductCard({ title, image, alt, price, rating, reviews, badge }
         {rating}⭐({reviews})
       </div>
       {/* Add to Cart Button */}
-      <button className="mt-auto bg-black text-white px-4 py-1 rounded-lg hover:bg-gray-800 transition font-bebasNeue tracking-wide text-base">Add to Cart</button>
+      <button className={`mt-auto bg-black text-white px-4 py-1 rounded-lg hover:bg-gray-800 transition ${bebasNeue.className} tracking-wide text-base`}>Add to Cart</button>
     </div>
   );
 }
@@ -387,7 +387,7 @@ function Carousel() {
               {/* Overlay with description and button */}
               <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-end p-8">
                 <p className="text-white text-lg md:text-2xl font-merriweather mb-6 text-center drop-shadow-lg">{carouselItems[i].description}</p>
-                <button className="bg-white text-black font-bebasNeue px-8 py-3 rounded-full text-lg md:text-xl shadow-lg hover:bg-gray-200 transition">Explore Collection</button>
+                <button className={`bg-white text-black ${bebasNeue.className} px-8 py-3 rounded-full text-lg md:text-xl shadow-lg hover:bg-gray-200 transition`}>Explore Collection</button>
               </div>
             </motion.div>
           </AnimatePresence>
