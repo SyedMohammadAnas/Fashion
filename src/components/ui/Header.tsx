@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -106,7 +107,7 @@ const Header: React.FC = () => {
       {/* Top row: navs and logo */}
       <div className="flex items-center justify-between w-full min-h-[64px] py-4 relative">
         {/* Left-side Navigation (Desktop only) */}
-        <nav className="hidden md:flex gap-8 text-base font-bebas font-bold mr-auto">
+        <nav className="hidden md:flex gap-8 text-xl font-bebas tracking-widest mr-auto ">
           {leftNavDropdowns.map((cat) => (
             <div
               key={cat.key}
@@ -125,13 +126,13 @@ const Header: React.FC = () => {
         {/* Absolutely centered logo using Bebas Neue font, always at top center */}
         <Link
           href="/"
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-bebas tracking-widest text-gray-900 z-10 pointer-events-auto font-bold"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-bebas tracking-widest text-gray-900 z-10 pointer-events-auto tracking-widest font-bold"
           style={{ minWidth: '160px' }}
         >
           FASHION
         </Link>
         {/* Desktop Navigation (remains on the right) */}
-        <nav className="hidden md:flex gap-8 text-base font-merriweather ml-auto">
+        <nav className="hidden md:flex gap-8 text-xl font-bebas ml-auto tracking-widest">
           <Link href="#products" className="hover:text-primary font-bebas transition-colors">Products</Link>
           <Link href="#Login" className="hover:text-primary font-bebas transition-colors">Login</Link>
           <Link href="#cart" className="hover:text-primary font-bebas transition-colors">Cart</Link>
@@ -171,12 +172,18 @@ const Header: React.FC = () => {
                 {leftNavDropdowns
                   .find((cat) => cat.key === openDropdown)?.items.map((item, idx) => (
                     <div key={item.title + idx} className="min-w-[180px]">
-                      <div className="font-bold text-gray-800 text-lg mb-2 uppercase">{item.title}</div>
+                      <div className="font-bold text-gray-800 text-lg mb-5 uppercase tracking-widest font-bebas">{item.title}</div>
                       <ul className="flex flex-col gap-1">
                         {item.sub.map((sub, subIdx) => (
-                          <li key={sub + subIdx} className="text-gray-600 hover:text-primary cursor-pointer transition-colors text-base">
-                            {sub}
-                          </li>
+                          sub === 'All Shirts' ? (
+                            <li key={sub + subIdx} className="text-gray-600 hover:text-primary text-lg cursor-pointer transition-colors font-bebas tracking-widest">
+                              <Link href="/shirts">{sub}</Link>
+                            </li>
+                          ) : (
+                            <li key={sub + subIdx} className="text-gray-600 hover:text-primary text-lg cursor-pointer transition-colors font-bebas tracking-widest">
+                              {sub}
+                            </li>
+                          )
                         ))}
                       </ul>
                     </div>

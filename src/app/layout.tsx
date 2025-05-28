@@ -38,8 +38,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} ${bebasNeue.variable} antialiased`}>
-      <body>
+    <html lang="en" className="antialiased">
+      {/* Apply font loader className to body to ensure fonts are loaded and used */}
+      <body className={`${geistSans.variable} ${geistMono.variable} ${merriweather.className} ${bebasNeue.className}`}>
         {children}
         {/* Portal root for header dropdown overlay */}
         <div id="dropdown-root"></div>

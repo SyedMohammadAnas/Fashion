@@ -1,5 +1,4 @@
-/* Import Google Fonts: Merriweather and Bebas Neue for global use */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:wght@400;700&display=swap');
+/* Removed Google Fonts @import to avoid conflict with Next.js font loader */
 @import "tailwindcss";
 @import "tw-animate-css";
 
